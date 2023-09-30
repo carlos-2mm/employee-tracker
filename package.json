@@ -2,10 +2,10 @@
   "name": "employee-tracker",
   "version": "1.0.0",
   "description": "A Command-Line Content Management System (CMS) built using Node.js, Inquirer, and MySQL to manage a company's employee database.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   "homepage": "https://github.com/carlos-2mm/employee-tracker#readme",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "express": "^4.17.1",
     "inquirer": "^8.2.6",
     "mysql2": "^2.3.3"
   }
