@@ -1,25 +1,24 @@
-
-const mysql = require("mysql2");
 const inquirer = require("inquirer");
+const queries = require("./db/queries");
 
-function collectInput() {
-  const questions = [
-    {
-      type: "list",
-      name: "text",
-      message: "What would you like to do?",
-      choices: [
-        "View All Departments",
-        "View All Roles",
-        "View All Employees",
-        "Add A Department",
-        "Add A Role",
-        "Add An Employee",
-        "Update An Employee Role",
-      ],
-    },
-  ];
-  return inquirer.prompt(questions);
+async function collectInput() {
+  const { action } = await inquirer.prompt({
+    type: "list",
+    name: "action",
+    message: "What would you like to do?",
+    choices: [
+      "View all departments",
+      "View all roles",
+      "View all employees",
+      "Add a department",
+      "Add a role",
+      "Add an employee",
+      "Update an employee role",
+      "Exit",
+    ],
+  });
+
+    collectInput();
 }
 
 collectInput();
