@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const cTable = require("console.table"); // If you are using this, ensure it is used within your queries or remove it.
+const cTable = require("console.table");
 
 const {
   viewAllDepartments,
@@ -9,6 +9,13 @@ const {
   addRole,
   addEmployee,
   updateEmployeeRole,
+  updateEmployeeManager,
+  viewByManager,
+  viewByDepartment,
+  deleteDepartment,
+  deleteRole,
+  deleteEmployee,
+  viewBudget,
 } = require("./db/queries");
 
 async function collectInput() {
@@ -22,10 +29,17 @@ async function collectInput() {
           "View all departments",
           "View all roles",
           "View all employees",
+          "View employees by manager",
+          "View employees by department",
           "Add a department",
           "Add a role",
           "Add an employee",
           "Update an employee role",
+          "Update an employee manager",
+          "Delete department",
+          "Delete role",
+          "Delete employee",
+          "View utilized budget by department",
           "Exit",
         ],
       },
@@ -52,6 +66,27 @@ async function collectInput() {
         break;
       case "Update an employee role":
         await updateEmployeeRole();
+        break;
+      case "Update an employee manager":
+        await updateEmployeeManager();
+        break;
+      case "View employees by manager":
+        await viewByManager();
+        break;
+      case "View employees by department":
+        await viewByDepartment();
+        break;
+      case "Delete department":
+        await deleteDepartment();
+        break;
+      case "Delete role":
+        await deleteRole();
+        break;
+      case "Delete employee":
+        await deleteEmployee();
+        break;
+      case "View utilized budget by department":
+        await viewBudget();
         break;
       case "Exit":
         console.log("Goodbye!");
