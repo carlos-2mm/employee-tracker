@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/carlos-2mm/employee-tracker#readme",
   "dependencies": {
+    "console.table": "^0.10.0",
     "dotenv": "^16.3.1",
     "inquirer": "^8.2.6",
     "mysql2": "^2.3.3"
