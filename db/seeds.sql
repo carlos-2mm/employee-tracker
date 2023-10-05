@@ -1,4 +1,5 @@
-INSERT INTO department (name)
+-- Insert data into departments
+INSERT INTO departments (name)
 VALUES
       ('Legal'),
       ('Engineering'),
@@ -11,7 +12,8 @@ VALUES
       ('IT'),
       ('Accounting');
 
-INSERT INTO role (title, salary, department_id)
+-- Insert data into roles
+INSERT INTO roles (title, salary, department_id)
 VALUES
       ('Sales Manager', 90000, 4),
       ('Quality Control Manager', 85000, 7),
@@ -34,7 +36,8 @@ VALUES
       ('Customer Service Representative', 68000, 3),
       ('Financial Analyst', 94000, 5);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
+-- Insert data into employees
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES
       ('Walter', 'White', 1, NULL),
       ('Jesse', 'Pinkman', 2, 1),
@@ -53,6 +56,6 @@ VALUES
       ('Leonel', 'Salamanca', 15, 11),
       ('Marco', 'Salamanca', 16, 11),
       ('Steven', 'Gomez', 17, 6),
-      ('Brandon', 'Mayhew', 19, 2),
-      ('Lydia', 'Quayle', 20, 5),
-      ('Todd', 'Alquist', 21, 20);
+      ('Brandon', 'Mayhew', 18, 2),
+      ('Lydia', 'Quayle', 19, 5),
+      ('Todd', 'Alquist', 20, NULL);

@@ -1,6 +1,8 @@
+// Import necessary modules
 const inquirer = require("inquirer");
 const cTable = require("console.table");
 
+// Import database query functions
 const {
   viewAllDepartments,
   viewAllRoles,
@@ -18,14 +20,17 @@ const {
   viewBudget,
 } = require("./db/queries");
 
+// Function to collect user input and execute corresponding actions
 async function collectInput() {
   try {
+    // Prompt user for action
     const response = await inquirer.prompt([
       {
         name: "action",
         type: "list",
         message: "What would you like to do?",
         choices: [
+          // List of actions user can choose from
           "View all departments",
           "View all roles",
           "View all employees",
@@ -45,6 +50,7 @@ async function collectInput() {
       },
     ]);
 
+    // Switch case to handle user's action choice
     switch (response.action) {
       case "View all departments":
         await viewAllDepartments();
@@ -89,14 +95,18 @@ async function collectInput() {
         await viewBudget();
         break;
       case "Exit":
+        // Exit the application
         console.log("Goodbye!");
         process.exit(0);
         return;
     }
   } catch (error) {
+    // Log any errors that occur
     console.error("An error occurred:", error);
   }
+  // Recursive call to keep the application running until "Exit" is chosen
   collectInput();
 }
 
+// Initial call to start the application
 collectInput();
